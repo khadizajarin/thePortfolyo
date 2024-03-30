@@ -13,7 +13,7 @@ const Services = forwardRef((props, ref) => {
     useEffect(() => {
         axiosPublic.get('')
         .then((res) => {
-            console.log(res.data.user.services)
+            // console.log(res.data.user.services)
             setInfo(res.data.user.services)
         })
         .catch((error) => {
@@ -31,13 +31,13 @@ const Services = forwardRef((props, ref) => {
     }, []);
 
     return (
-        <div ref={ref} data-aos="fade-up" className="h-screen flex justify-center items-center">
+        <div ref={ref}  className="lg:h-screen flex justify-center items-center">
             <div className="text-center">
-                <h1 className="font-bold text-7xl text-[#31363F] mb-8">What I Do...</h1>
-                <div className="carousel carousel-center max-w-7xl p-4 space-x-4 rounded-box">
+                <h1 className="font-bold text-4xl lg:text-5xl text-[#76ABAE] mb-8">What I Do...</h1>
+                <div data-aos="fade-up" className="carousel carousel-center max-w-7xl p-4 space-x-4 rounded-box">
                     {info && info.map((service, index) => (
                        <div key={index} className="carousel-item relative">
-                       <img src={service.image.url} className="rounded-box w-96" alt={`Service ${index}`} />
+                       <img src={service.image.url} className="rounded-box w-80" alt={`Service ${index}`} />
                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 hover:bg-opacity-75 transition-opacity duration-300 opacity-0 hover:opacity-100 hover:rounded-box">
                            <p className="text-white text-xl font-bold mb-2">{service.name}</p>
                            <p className="text-white text-lg">{service.desc}</p>

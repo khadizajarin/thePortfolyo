@@ -1,16 +1,17 @@
 
 import Slider from './Gsap/Slider';
-import LeftContent from './LeftContent';
 import RightContent from './RightContent';
 
 
 const Home = () => {
     return (
-        <div className='grid lg:grid-cols-3 grid-cols-1 my-4 lg:h-screen'>
+       <div>
+         <div className='grid lg:grid-cols-2 grid-cols-1 justify-center items-center '>
             <RightContent></RightContent>
-            <Slider></Slider>
-            <LeftContent></LeftContent>
+            <Slider></Slider> 
         </div>
+        <hr className='divider'/>
+       </div>
     );
 };
 

@@ -1,30 +1,37 @@
+// RightContent.js
 import { useEffect, useState } from "react";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
-
+import { motion } from "framer-motion"
 
 const RightContent = () => {
-
-    const [info, setInfo] = useState([]);
+    const [info, setInfo] = useState({});
     const axiosPublic = useAxiosPublic();
 
     useEffect(() => {
         axiosPublic.get('')
-        .then((res) => {
-            setInfo(res.data);
-            // console.log(info.user.about);
-        })
-        .catch((error) => {
-            console.error(error);
-        });
-    }, [axiosPublic, info]);
+            .then((res) => {
+                setInfo(res.data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, [axiosPublic]);
+
     return (
-        <div className="flex flex-col justify-center items-center ">
-            <div className="font-bold text-7xl text-[#31363F] lg:p-10 mx-10">
-                {
-                info.user?.about?.title
-                }
+        <div>
+            <div className=" lg:p-48 ">
+            <motion.div
+            initial={{ scale: 0 }}
+            animate={{ rotate: 360, scale: 1 }}
+            transition={{
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+            }}
+            ><span className="font-bold text-4xl lg:text-8xl text-[#76ABAE]">{info.user?.about?.title?.substring(0, 9)}</span>
+            <span className="font-bold text-4xl  text-[#76ABAE]">{info.user?.about?.title?.substring(9)}...</span>
+            </motion.div>
             </div>
-            
         </div>
     );
 };

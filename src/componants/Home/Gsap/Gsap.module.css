@@ -1,32 +1,30 @@
-.img{
-    width: 50px;
-    height: 150px;
-    object-fit: contain;
-    border-radius: 50%;
-    flex: 0.5;
-}
 
 .content {
-    /* height: 100px; */
-    width: 100%;
-    /* background-color: #F2E3DB; */
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.whitePart {
+    position: absolute;
+    width: 250px; 
+    height: 179%; 
+    background-color: white;
+    left: 70%; 
+    transform: translateX(-50%);
+}
+
+.slider {
+    position: relative;
+    z-index: 1; 
+}
 .container{
-    /* width: 600px; */
-    min-height: fit-content;
-    color:#EEEEEE;
-    background-color: #31363F;
+    color:#76ABAE;
+    background-color: #76ABAE;
     display: flex;
     align-items: center;
     padding:20px;
     margin:20px;
-}
-
-.text{
-    flex:0.5;
 }

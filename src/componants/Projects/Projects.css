@@ -1,0 +1,27 @@
+.slider-container {
+    margin-top: 20px;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-item:hover .diff-item-2 {
+    transform: translateX(-100%); 
+}
+
+.diff-item-2 {
+    transition: transform 0.5s ease-in-out;
+    
+}
