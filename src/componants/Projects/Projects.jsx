@@ -14,10 +14,6 @@ const Projects = forwardRef((props, ref) => {
 
     useEffect(() => {
         AOS.init({
-            offset: 200,
-            duration: 600,
-            easing: 'ease-in-sine',
-            delay: 100,
         });
     }, []);
 
@@ -32,11 +28,11 @@ const Projects = forwardRef((props, ref) => {
             });
     }, [axiosPublic]);
     return (
-        <div ref={ref} className=" slider-container">
+        <div ref={ref} className=" ">
             <h1 className="text-center font-bold text-4xl lg:text-5xl text-[#76ABAE] my-6">Projects...</h1>
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-4  text-[#31363F] slider">
                 {info.slice().reverse().map((project, index) => (
-                    <div key={index} data-aos={index % 2 === 0 ? "fade-up-right" : "fade-up-left"} className="slider-item">
+                    <div key={index} data-aos={index % 2 === 0 ? "fade-up-left" : "fade-up-right"} className="slider-item">
                         <div className="diff aspect-[16/9] rounded-box h-72 w-4/5">
                             <div className="diff-item-1 flex-row text-right rounded-box">
                                 <img alt="daisy" src={project.image.url} /> 

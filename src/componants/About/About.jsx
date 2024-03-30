@@ -12,7 +12,7 @@ const About = forwardRef((props, ref) => {
     const boxRef = useRef(null);
 
     useEffect(() => {
-        const tl = gsap.timeline({ repeat: -1, repeatDelay:15});
+        const tl = gsap.timeline({ repeat: -1, repeatDelay:5});
         tl.fromTo(
             boxRef.current,
             { opacity: 0, x: -300 }, 

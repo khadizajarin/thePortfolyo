@@ -15,7 +15,7 @@ const Skills = forwardRef((props, ref) => {
     useEffect(() => {
         axiosPublic.get('')
         .then((res) => {
-            console.log(res.data.user.skills)
+            // console.log(res.data.user.skills)
             setInfo(res.data.user.skills)
         })
         .catch((error) => {
