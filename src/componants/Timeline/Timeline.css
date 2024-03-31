@@ -1,8 +1,31 @@
 
-.box {
-  background-color: #76ABAE;
-  width: 10vw;
-  height: 10vw;
-  border-radius: 100;
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #222222;
 }
 
+circle,
+rect,
+line {
+  stroke-width: 10px;
+  stroke-linecap: round;
+  fill: transparent;
+}
+
+.custom-bullets {
+  list-style: none; /* Remove default list style */
+  padding-left: 0; /* Remove default left padding */
+}
+
+.custom-bullets li {
+  margin-bottom: 0.5em; /* Adjust spacing between list items */
+}
+
+.bullet-icon {
+  margin-right: 0.5em; /* Adjust spacing between bullet icon and text */
+  color: #76ABAE; /* Color of the bullet icon */
+}
