@@ -4,36 +4,17 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import './Timeline.css'
 import {motion} from 'framer-motion'
 
-const circleRadius = 80; 
 
 const draw = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: (i) => {
-        const delay = 1 + i * 0.75;
-        return {
-            pathLength: 1,
-            opacity: 1,
-            rotate: 360, 
-            transition: {
-                pathLength: { delay, type: "spring", duration: 3,  repeat: Infinity},
-                opacity: { delay, duration: 3 },
-                rotate: { delay, duration: 3, repeat: Infinity },
-            }
-        };
-    }
+    hidden: { scaleY: [-1, 0] }, 
+    visible: {
+        scaleY: [0, 1], 
+        transition: {
+            scaleY: { type: "spring", duration: 4, repeat: Infinity, }, 
+        }
+    },
+    
 };
-
-const circles = Array.from({ length: 3 }, (_, i) => (
-    <motion.circle
-        key={i}
-        cx="300"
-        cy="200"
-        r={circleRadius} 
-        stroke="#76ABAE"
-        variants={draw}
-        custom={i + 1}
-    />
-));
 
 // eslint-disable-next-line react/display-name
 const Timelines = forwardRef((props, ref) => {
@@ -64,43 +45,41 @@ const Timelines = forwardRef((props, ref) => {
             <hr className="divider"/>
             <h1 className="text-center font-bold text-4xl lg:text-5xl text-[#76ABAE] my-20">Timeline...</h1>
             <div className="">
-            <div className="lg:flex justify-between">
+
+
                 {/* Education tab content */}
-                <div className="w-1/2 px-20 education-section">
+                <div className=" ">
                     <h2 className="text-center font-bold text-4xl text-[#76ABAE] mb-4">Education</h2>
-                    {info.slice().reverse().filter(item => item.forEducation).slice().reverse().map((line, index) => (
-                        <div key={index} className="py-10 relative">
-                            <div className="flex flex-row-reverse  items-center">
-                            <motion.svg
-                                width="300"
-                                height="300"
-                                viewBox="0 0 600 600"
-                                initial="hidden"
-                                animate="visible"
-                            >
-                                {circles}
-                            </motion.svg>
-                            <div data-aos="fade-down" className="text-right text-[#76ABAE]">
-                                <div className="text-right mb-2">
-                                    <div className="flex flex-row justify-between items-center mb-2">
-                                        <h2 className="text-right font-extrabold text-3xl">{line.company_name}</h2>
-                                        <p className="education-date">{formatDate(line.startDate)} - {formatDate(line.endDate)},<br />{line.jobLocation}</p>
-                                    </div>
-                                    <h2 className='font-extrabold'>{line.summary}</h2>
-                                    <ul className="custom-bullets mt-4">
+                    <ul  className=" timeline timeline-snap-icon max-md:timeline-compact timeline-vertical m-10">
+                    {info.slice().reverse().filter(item => item.forEducation).slice().reverse().map((line, index) => ( 
+                            <li data-aos="fade-down" data-aos-easing="ease-in-sine" key={index} className="py-10 text-[#76ABAE]">
+                                <div className="timeline-start text-right">
+                                    <p className="text-3xl font-extrabold">{line.company_name}</p>
+                                    <p className="font-semibold">{line.summary}</p>
+                                    <ul className="custom-bullets  mt-4">
                                         {line.bulletPoints.map((bullet, index) => (
                                             <li key={index}>
-                                                <span className="bullet-icon">•</span>
                                                 {bullet}
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
-                                <p>{line.description}</p>
-                            </div>
-                            </div>
-                        </div>
+                                <div className="timeline-end font-bold">
+                                    <p className="text-xl">{formatDate(line.startDate)} - {formatDate(line.endDate)},<br />{line.jobLocation}</p>
+                                    <p className="text-lg">{line.jobTitle}</p>
+                                </div>
+                                <motion.hr
+                                    className="timeline-middle  mx-10"
+                                    // style={{ transformOrigin: 'top' }}
+                                    stroke="#76ABAE"
+                                    strokeWidth="2"
+                                    variants={draw}
+                                    initial="hidden"
+                                    animate="visible"
+                                />
+                            </li>
                     ))}
+                     </ul>
                 </div>
 
 
@@ -108,48 +87,41 @@ const Timelines = forwardRef((props, ref) => {
      
                             
                     {/* Experience tab content */}
-                <div className="w-1/2 px-20 experience-section">
-                        <h2 className="text-center font-bold text-4xl text-[#76ABAE] mb-4">Experience</h2>
-                        {info.filter(item => !item.forEducation).slice().reverse().map((line, index) => (
-                            <div key={index} className="py-10 relative">
-                                <div  className="flex flex-row items-center">
-                                <motion.svg
-                                    width="300"
-                                    height="300"
-                                    viewBox="0 0 600 600"
+                    <div className="">
+                    <h2 className="text-center font-bold text-4xl text-[#76ABAE] mb-4">Experience</h2>
+                    <ul  className=" timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+                    {info.slice().reverse().filter(item => !item.forEducation).slice().reverse().map((line, index) => ( 
+                            <li data-aos="fade-down" data-aos-easing="ease-in-sine" key={index} className="py-10  text-[#76ABAE] text-right">
+                                <div className="timeline-end text-left">
+                                    <p className="text-3xl font-extrabold">{line.company_name}</p>
+                                    <p className="font-semibold">{line.summary}</p>
+                                    <ul className="custom-bullets  mt-4">
+                                        {line.bulletPoints.map((bullet, index) => (
+                                            <li key={index}>
+                                                {bullet}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className="timeline-start font-bold">
+                                    <p className="text-xl">{formatDate(line.startDate)} - {formatDate(line.endDate)},<br />{line.jobLocation}</p>
+                                    <p className="text-lg">{line.jobTitle}</p>
+                                </div>
+                                <motion.hr
+                                    className="timeline-middle  mx-10"
+                                    // style={{ transformOrigin: 'top' }}
+                                    stroke="#76ABAE"
+                                    strokeWidth="2"
+                                    variants={draw}
                                     initial="hidden"
                                     animate="visible"
-                                >
-                                    {circles}
-                                </motion.svg>
-                                <div data-aos="fade-down" className="text-left text-[#76ABAE]">
-                                    <div className="text-left mb-2">
-                                        <div className="flex flex-row-reverse justify-between items-center mb-2">
-                                            <h2 className="text-left font-extrabold text-3xl">{line.company_name}</h2>
-                                            <p className="experience-date ">{formatDate(line.startDate)} - {formatDate(line.endDate)}, <br />{line.jobLocation}</p>
-                                        </div>
-                                        <h2 className='font-extrabold text-left'>{line.summary}</h2>
-                                        <ul className="custom-bullets mt-4">
-                                            {line.bulletPoints.map((bullet, index) => (
-                                                <li key={index}>
-                                                    <span className="bullet-icon">•</span> {/* Custom bullet icon */}
-                                                    {bullet}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    <p className="mt-4">{line.description}</p>
-                                </div>
-                                </div>
-                                
-                                
-                            </div>
-                        ))}
+                                />
+                            </li>
+                    ))}
+                     </ul>
                 </div>
-            </div>
 
-        </div>
-        <hr className="divider"/>
+            </div>
         </div>
     );
 });
