@@ -62,7 +62,7 @@ const Skills = forwardRef((props, ref) => {
     };
     
     return (
-        <div ref={ref} className="lg:h-screen flex flex-col justify-center items-center">
+        <div ref={ref} className="lg:h-screen flex flex-col justify-center items-center bg-white">
             <div>
                 <h1 className="text-center font-bold text-4xl lg:text-5xl text-[#76ABAE] mt-4">Skills...</h1>
                 <div data-aos="flip-down" className="grid lg:grid-cols-7 grid-cols-2 gap-4">

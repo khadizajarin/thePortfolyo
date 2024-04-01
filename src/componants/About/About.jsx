@@ -39,7 +39,7 @@ const About = forwardRef((props, ref) => {
     }, [axiosPublic]);
 
     return (
-        <div ref={ref} className=" relative bg-[#EEEEEE]"> 
+        <div ref={ref} className=" relative bg-[#EEEEEE] " > 
             <h1 className="text-center font-bold text-4xl lg:text-5xl text-[#222831] pt-24">About Me...</h1>
             <div className="lg:py-20 max-w-7xl mx-auto flex justify-center items-center">
                 <div className="flex flex-col lg:flex-row items-center text-[#222831]"> 
