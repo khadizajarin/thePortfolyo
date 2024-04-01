@@ -62,7 +62,7 @@ const Slider = () => {
                     <div className="testimonials lg:mx-6">
                         <div className={styles.container}>
                             <div >
-                                <p className="lg:text-3xl  text-[#EEEEEE]">{info?.user?.about?.subTitle?.substring(0, 21)}</p>
+                                <p className={`lg:text-xl font-semibold text-[#EEEEEE] ${styles.uppercaseText}`}>{info?.user?.about?.subTitle?.substring(1, 20)}</p>
                             </div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@ const Slider = () => {
                     <div className="testimonials lg:mx-6">
                         <div className={styles.container}>
                             <div>
-                                <p className="lg:text-3xl text-center text-[#EEEEEE]">{info?.user?.about?.subTitle?.substring(22, 37)}</p>
+                                <p className={`lg:text-xl font-semibold text-[#EEEEEE] ${styles.uppercaseText}`}>{info?.user?.about?.subTitle?.substring(22, 37)}</p>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ const Slider = () => {
                     <div className="testimonials lg:mx-6">
                         <div className={styles.container}>
                             <div>
-                                <p className="lg:text-3xl text-[#EEEEEE]">{info?.user?.about?.subTitle?.substring(37, 58)}</p>
+                                <p className={`lg:text-xl font-semibold text-[#EEEEEE] ${styles.uppercaseText}`}>{info?.user?.about?.subTitle?.substring(41, 58)}</p>
                             </div>
                         </div>
                     </div>

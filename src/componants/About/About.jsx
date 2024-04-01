@@ -10,13 +10,12 @@ const About = forwardRef((props, ref) => {
     const axiosPublic = useAxiosPublic();
 
     const boxRef = useRef(null);
-
     useEffect(() => {
-        const tl = gsap.timeline({ repeat: -1, repeatDelay:5});
+        const tl = gsap.timeline({ repeat: -1, repeatDelay:2});
         tl.fromTo(
             boxRef.current,
-            { opacity: 0, x: -300 }, 
-            { opacity: 1, x: 0, rotation: 360, duration: 3, ease: "power2.inOut" } 
+            { opacity: 0, x: -50,y: 40 }, 
+            { opacity: 0.8, x: 80,y: 40, rotation: 360, duration: 2, ease: "power2.inOut" } 
         );
     }, []);
 
@@ -40,23 +39,26 @@ const About = forwardRef((props, ref) => {
     }, [axiosPublic]);
 
     return (
-        <div ref={ref} className="lg:max-w-7xl lg:mx-auto relative"> 
-            <h1 className="text-center font-bold text-4xl lg:text-5xl text-[#76ABAE] mt-4">About Me...</h1>
-            <div className="lg:h-screen flex justify-center items-center">
-                <div className="flex flex-col gap-6 lg:flex-row-reverse items-center lg:items-start mx-4 w-full text-[#76ABAE] relative"> 
-                    <img data-aos="fade-right" src={info.user?.about?.avatar?.url} className="w-60 rounded-lg shadow-stone-600 mb-4 lg:mb-0 relative" alt="Avatar" /> 
-                    <div ref={boxRef} className="absolute bottom-0 right-52 bg-[#76ABAE] w-24 h-24 rounded-full flex justify-center items-center text-[#EEEEEE]">
-                            <span>Box</span>
+        <div ref={ref} className=" relative bg-[#EEEEEE]"> 
+            <h1 className="text-center font-bold text-4xl lg:text-5xl text-[#222831] pt-24">About Me...</h1>
+            <div className="lg:py-20 max-w-7xl mx-auto flex justify-center items-center">
+                <div className="flex flex-col lg:flex-row items-center text-[#222831]"> 
+                    <div className="w-1/2 flex justify-center relative">
+                        <img data-aos="fade-right" src={info.user?.about?.avatar?.url} className="w-96 rounded-lg shadow-stone-600  lg:mb-0 relative" alt="Avatar" /> 
+                        <div ref={boxRef} className="absolute bottom-0 left-0 bg-[#222831] w-36 h-36 rounded-full flex justify-center items-center text-[#EEEEEE]">
+                            <p className="p-8">{info.user?.about?.exp_year} years of experience</p>
+                        </div>
                     </div>
-                    <div data-aos="fade-left" className="text-center lg:text-left relative"> 
-                        <p className="font-bold">{info?.user?.about?.description}</p>
-                        <ul className="text-left">
+                    
+                    <div data-aos="fade-left" className="w-1/2 text-center lg:text-left relative grid grid-row-3 items-center"> 
+                        <p className="font-semibold text-lg mb-8">{info?.user?.about?.description}</p>
+                        <ul className="text-left mb-8">
                             <li className="mb-2">Name : {info.user?.about?.name}</li>
                             <li className="mb-2">Email : {info.user?.about?.contactEmail}</li>
                             <li className="mb-2">Phone : {info.user?.about?.phoneNumber}</li>
                             <li className="mb-2">Quote : {info.user?.about?.quote}</li>
                         </ul>
-                        <button className="btn mt-4 bg-[#76ABAE] border-0 text-[#EEEEEE]">Download CV</button>
+                        <button className="btn bg-[#222831] border-0 text-[#EEEEEE]">Download CV</button>
                     </div>
                 </div>
             </div> 

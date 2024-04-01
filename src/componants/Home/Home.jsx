@@ -10,7 +10,6 @@ const Home = () => {
             <RightContent></RightContent>
             <Slider></Slider> 
         </div>
-        <hr className='divider'/>
        </div>
     );
 };

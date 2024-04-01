@@ -43,46 +43,46 @@ function App() {
 
   const navlink = 
             <>
-              <li onClick={() => scrollToSection(aboutRef)}><button className="btn btn-ghost">About</button></li>
-              <li onClick={() => scrollToSection(servicesRef)}><button className="btn btn-ghost">Services</button></li>
-              <li onClick={() => scrollToSection(skillsRef)}><button className="btn btn-ghost">Skills</button></li>
-              <li onClick={() => scrollToSection(projectsRef)}><button className="btn btn-ghost">Projects</button></li>
-              <li onClick={() => scrollToSection(timelineRef)}><button className="btn btn-ghost">Timeline</button></li>
-              <li onClick={() => scrollToSection(testimonialRef)}><button className="btn btn-ghost">Testimonials</button></li>
-              <li onClick={() => scrollToSection(contactRef)}><button className="btn btn-ghost">Contact</button></li>
+              <li onClick={() => scrollToSection(aboutRef)}><button className="btn hover:bg-[#EEEEEE] btn-ghost">ABOUT</button></li>
+              <li onClick={() => scrollToSection(servicesRef)}><button className="btn hover:bg-[#EEEEEE] btn-ghost">SERVICES</button></li>
+              <li onClick={() => scrollToSection(skillsRef)}><button className="btn hover:bg-[#EEEEEE] btn-ghost">SKILLS</button></li>
+              <li onClick={() => scrollToSection(projectsRef)}><button className="btn hover:bg-[#EEEEEE] btn-ghost">PROJECTS</button></li>
+              <li onClick={() => scrollToSection(timelineRef)}><button className="btn hover:bg-[#EEEEEE] btn-ghost">TIMELINE</button></li>
+              <li onClick={() => scrollToSection(testimonialRef)}><button className="btn hover:bg-[#EEEEEE] btn-ghost">TESTIMONIALS</button></li>
+              <li onClick={() => scrollToSection(contactRef)}><button className="btn hover:bg-[#EEEEEE] btn-ghost">CONTACT</button></li>
             </>
   
 
   return (
-    <div className="my-text bg-[#222831]">
-      <div className="navbar font-extrabold">
+    <div className=" bg-[#222831]">
+      <div className="navbar bg-[#76ABAE] font-extrabold lg:px-28">
         <div className="navbar-start">
           {/* Dropdown for mobile */}
           <div className="dropdown lg:hidden">
             <div tabIndex={0} role="button" className="btn btn-ghost">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#76ABAE"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </div>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#76ABAE] text-[#76ABAE] space-y-4 rounded-box lg:w-52">
+            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#76ABAE] text-[#222831] space-y-4 rounded-box lg:w-52">
               {navlink}
             </ul>
           </div>
           {/* User name */}
-          <a className="btn btn-ghost text-xl text-[#76ABAE]">{info.user?.about?.name}</a>
+          <a className="btn btn-ghost text-xl text-[#222831]">{info.user?.about?.name}</a>
         </div>
         {/* Center menu for larger screens */}
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 space-x-4  text-[#76ABAE]">
+          <ul className="menu menu-horizontal px-1 space-x-4  text-[#222831]">
             {navlink}
           </ul>
         </div>
         {/* Avatar */}
         <div className="navbar-end avatar">
-          <div className="w-10 rounded-full border-[#76ABAE] border-4">
+          <div className="w-10 rounded-full border-[#222831] border-4 flex justify-center items-center">
             <img alt="User Avatar" src={info.user?.about?.avatar?.url} />
           </div>
         </div>
       </div>
-      <hr className="divider my-0" />
+      {/* <hr className="divider my-0" /> */}
       {/* Components */}
       <Home></Home>
       <About ref={aboutRef}></About>

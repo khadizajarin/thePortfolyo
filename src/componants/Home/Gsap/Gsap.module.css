@@ -10,8 +10,8 @@
 .whitePart {
     position: absolute;
     width: 250px; 
-    height: 179%; 
-    background-color: white;
+    height: 197.5%; 
+    background-color: #EEEEEE;
     left: 70%; 
     transform: translateX(-50%);
 }
@@ -25,6 +25,10 @@
     background-color: #76ABAE;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding:20px;
     margin:20px;
+}
+.uppercaseText {
+    text-transform: uppercase;
 }

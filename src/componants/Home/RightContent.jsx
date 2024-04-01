@@ -18,8 +18,8 @@ const RightContent = () => {
     }, [axiosPublic]);
 
     return (
-        <div>
-            <div className=" lg:p-48 ">
+        <div className="lg:pl-12">
+            <div className=" lg:p-56">
             <motion.div
             initial={{ scale: 0 }}
             animate={{ rotate: 360, scale: 1 }}
@@ -28,7 +28,7 @@ const RightContent = () => {
                 stiffness: 260,
                 damping: 20,
             }}
-            ><span className="font-bold text-4xl lg:text-8xl text-[#76ABAE]">{info.user?.about?.title?.substring(0, 9)}</span>
+            ><span className="font-bold text-4xl lg:text-7xl text-[#76ABAE]">{info.user?.about?.title?.substring(0, 9)} </span>
             <span className="font-bold text-4xl  text-[#76ABAE]">{info.user?.about?.title?.substring(9)}...</span>
             </motion.div>
             </div>

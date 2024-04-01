@@ -5,16 +5,7 @@ import './Timeline.css'
 import {motion} from 'framer-motion'
 
 
-const draw = {
-    hidden: { scaleY: [-1, 0] }, 
-    visible: {
-        scaleY: [0, 1], 
-        transition: {
-            scaleY: { type: "spring", duration: 4, repeat: Infinity, }, 
-        }
-    },
-    
-};
+
 
 // eslint-disable-next-line react/display-name
 const Timelines = forwardRef((props, ref) => {
@@ -24,7 +15,6 @@ const Timelines = forwardRef((props, ref) => {
         return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
     };
 
-
     const [info, setInfo] = useState([]);
     const axiosPublic = useAxiosPublic();
 
@@ -32,17 +22,27 @@ const Timelines = forwardRef((props, ref) => {
         axiosPublic.get('')
             .then((res) => {
                 setInfo(res.data.user.timeline);
-                console.log(res.data.user.timeline)
+                // console.log(res.data.user.timeline)
             })
             .catch((error) => {
                 console.error(error);
             });
     }, [axiosPublic]);
 
+    const draw = {
+        hidden: { scaleY: [-1, 0] }, 
+        visible: {
+            scaleY: [0, 1], 
+            transition: {
+                scaleY: { type: "spring", duration: 4, repeat: Infinity, }, 
+            }
+        },   
+    };
+
 
     return (
         <div ref={ref} className="">
-            <hr className="divider"/>
+            <hr className="divider mt-20"/>
             <h1 className="text-center font-bold text-4xl lg:text-5xl text-[#76ABAE] my-20">Timeline...</h1>
             <div className="">
 
@@ -54,9 +54,9 @@ const Timelines = forwardRef((props, ref) => {
                     {info.slice().reverse().filter(item => item.forEducation).slice().reverse().map((line, index) => ( 
                             <li data-aos="fade-down" data-aos-easing="ease-in-sine" key={index} className="py-10 text-[#76ABAE]">
                                 <div className="timeline-start text-right">
-                                    <p className="text-3xl font-extrabold">{line.company_name}</p>
+                                    <p className="text-5xl font-extrabold">{line.company_name}</p>
                                     <p className="font-semibold">{line.summary}</p>
-                                    <ul className="custom-bullets  mt-4">
+                                    <ul className="custom-bullets mt-4">
                                         {line.bulletPoints.map((bullet, index) => (
                                             <li key={index}>
                                                 {bullet}
@@ -65,14 +65,13 @@ const Timelines = forwardRef((props, ref) => {
                                     </ul>
                                 </div>
                                 <div className="timeline-end font-bold">
-                                    <p className="text-xl">{formatDate(line.startDate)} - {formatDate(line.endDate)},<br />{line.jobLocation}</p>
+                                    <p className="text-5xl">{formatDate(line.startDate)} - {formatDate(line.endDate)},<br />{line.jobLocation}</p>
                                     <p className="text-lg">{line.jobTitle}</p>
                                 </div>
                                 <motion.hr
-                                    className="timeline-middle  mx-10"
-                                    // style={{ transformOrigin: 'top' }}
-                                    stroke="#76ABAE"
-                                    strokeWidth="2"
+                                    className="timeline-middle mx-10 text-[#76ABAE]"
+                                    stroke="" // Adding the stroke color here
+                                    strokeWidth="10"
                                     variants={draw}
                                     initial="hidden"
                                     animate="visible"
@@ -82,9 +81,6 @@ const Timelines = forwardRef((props, ref) => {
                      </ul>
                 </div>
 
-
-
-     
                             
                     {/* Experience tab content */}
                     <div className="">
@@ -93,7 +89,7 @@ const Timelines = forwardRef((props, ref) => {
                     {info.slice().reverse().filter(item => !item.forEducation).slice().reverse().map((line, index) => ( 
                             <li data-aos="fade-down" data-aos-easing="ease-in-sine" key={index} className="py-10  text-[#76ABAE] text-right">
                                 <div className="timeline-end text-left">
-                                    <p className="text-3xl font-extrabold">{line.company_name}</p>
+                                    <p className="text-5xl font-extrabold">{line.company_name}</p>
                                     <p className="font-semibold">{line.summary}</p>
                                     <ul className="custom-bullets  mt-4">
                                         {line.bulletPoints.map((bullet, index) => (
@@ -104,12 +100,11 @@ const Timelines = forwardRef((props, ref) => {
                                     </ul>
                                 </div>
                                 <div className="timeline-start font-bold">
-                                    <p className="text-xl">{formatDate(line.startDate)} - {formatDate(line.endDate)},<br />{line.jobLocation}</p>
+                                    <p className="text-5xl">{formatDate(line.startDate)} - {formatDate(line.endDate)},<br />{line.jobLocation}</p>
                                     <p className="text-lg">{line.jobTitle}</p>
                                 </div>
                                 <motion.hr
                                     className="timeline-middle  mx-10"
-                                    // style={{ transformOrigin: 'top' }}
                                     stroke="#76ABAE"
                                     strokeWidth="2"
                                     variants={draw}
@@ -120,7 +115,6 @@ const Timelines = forwardRef((props, ref) => {
                     ))}
                      </ul>
                 </div>
-
             </div>
         </div>
     );
