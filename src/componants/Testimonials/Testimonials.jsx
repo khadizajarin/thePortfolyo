@@ -24,7 +24,7 @@ const Testimonials = forwardRef((props, ref) => {
     }, [axiosPublic]);
     
     return (
-        <div ref={ref} className="bg-[#f2f2f2] pb-20">
+        <div ref={ref} className="bg-[#DCDEE0] pb-20">
             <div className="flex justify-center relative z-10 " >
                 <div className=" p-5 inline-block bg-[#76ABAE] relative bottom-10" style={{opacity:0.8}}>
                     <h1 className="text-center font-bold text-3xl text-[#F2F2F2] ">Testimonials</h1>

@@ -39,9 +39,9 @@ const About = forwardRef((props, ref) => {
     }, [axiosPublic]);
 
     return (
-        <div ref={ref} className=" relative bg-[#F2F2F2] " > 
+        <div ref={ref} className="relative bg-[#F2F2F2] " > 
             <h1 className="text-center font-bold text-4xl lg:text-5xl text-[#222831] pt-16">ABOUT ME</h1>
-            <div className="lg:py-20 max-w-7xl mx-auto flex justify-center items-center">
+            <div className="lg:py-16 max-w-7xl mx-auto flex justify-center items-center">
                 <div className="flex flex-col lg:flex-row items-center text-[#222831]"> 
                     <div className="w-1/2 flex justify-center relative">
                         <img data-aos="fade-right" src={info.user?.about?.avatar?.url} className="w-72 rounded-lg shadow-stone-600  lg:mb-0 relative" alt="Avatar" /> 
