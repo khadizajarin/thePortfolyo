@@ -28,21 +28,23 @@ const Projects = forwardRef((props, ref) => {
             });
     }, [axiosPublic]);
     return (
-        <div ref={ref} className=" ">
-            <h1 className="text-center font-bold text-4xl lg:text-5xl text-[#76ABAE] my-6">Projects...</h1>
-            <div className="grid lg:grid-cols-2 grid-cols-1 gap-4  text-[#31363F] slider">
+        <div ref={ref} className="bg-white " >
+            <div className="flex justify-center relative z-10 " style={{opacity:0.5}}>
+                <div className=" p-5 inline-block bg-[#76ABAE] relative top-10" >
+                    <h1 className="text-center font-bold  text-3xl text-[#F2F2F2] ">PROJECTS</h1>
+                </div>
+            </div>
+            <div className=" grid lg:grid-cols-3 grid-cols-1 gap-6 text-[] slider px-20 pt-20  bg-[#DCDEE0] pb-32 relative">
                 {info.slice().reverse().map((project, index) => (
-                    <div key={index} data-aos={index % 2 === 0 ? "fade-up-left" : "fade-up-right"} className="slider-item">
-                        <div className="diff aspect-[16/9] rounded-box h-72 w-4/5">
+                    <div key={index} data-aos="fade-up" className="slider-item mt-4">
+                        <div className="diff aspect-[16/9] rounded-box h-72 ">
                             <div className="diff-item-1 flex-row text-right rounded-box">
                                 <img alt="daisy" src={project.image.url} /> 
-                                <div className=" p-10 glass">
-                                    <div className="flex flex-row-reverse justify-between items-center mb-2">
-                                        <h2 className="font-extrabold text-3xl ">{project.title}</h2>
-                                        <h2 className='font-extrabold '>{project.techStack}</h2>
-                                    </div>
-                                    <p>{project.description}</p>
-                                    <Link to={project.liveurl} className="btn btn-ghost p-2 rounded-box mt-4 border-[#31363F]">See Project</Link>
+                                <div className="p-10 glass text-[#31363F]">
+                                    <h2 className="font-extrabold text-3xl ">{project.title}</h2>
+                                    <h2 className='font-extrabold my-2'>{project.techStack}</h2>
+                                    <p className="text-xs">{project.description}</p>
+                                    <Link to={project.liveurl} className="btn btn-ghost text-[#F2F2F2] rounded-lg mt-4 bg-[#31363F]" style={{opacity:0.8}}>See Project</Link>
                                 </div>        
                             </div>
                             <div className="diff-item-2">

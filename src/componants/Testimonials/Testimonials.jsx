@@ -8,15 +8,6 @@ import "./Testimonials.css";
 // eslint-disable-next-line react/display-name
 const Testimonials = forwardRef((props, ref) => {
     
-    var settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      };
-    
-
 
     const [info, setInfo] = useState([]);
     const axiosPublic = useAxiosPublic();
@@ -33,9 +24,13 @@ const Testimonials = forwardRef((props, ref) => {
     }, [axiosPublic]);
     
     return (
-        <div ref={ref} className="h-screen">
-            <h1 className="text-center font-bold text-4xl lg:text-5xl text-[#76ABAE] my-20">Testimonials...</h1>
-            <div className="flex justify-center items-center">
+        <div ref={ref} className="bg-[#f2f2f2] pb-20">
+            <div className="flex justify-center relative z-10 " >
+                <div className=" p-5 inline-block bg-[#76ABAE] relative bottom-10" style={{opacity:0.8}}>
+                    <h1 className="text-center font-bold text-3xl text-[#F2F2F2] ">Testimonials</h1>
+                </div>
+            </div>
+            <div className="flex justify-center items-center pt-8">
                 <div className="container p-4 rounded-lg">
                     <div className="carousel">
                         {info.map((review, index) => (

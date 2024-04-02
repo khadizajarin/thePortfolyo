@@ -41,15 +41,16 @@ const Timelines = forwardRef((props, ref) => {
 
 
     return (
-        <div ref={ref} className="">
-            <hr className="divider mt-20"/>
-            <h1 className="text-center font-bold text-4xl lg:text-5xl text-[#76ABAE] my-20">Timeline...</h1>
-            <div className="">
-
-
+        <div ref={ref} className=" pb-32">
+            <div className="flex justify-center relative z-10 " >
+                <div className=" p-5 inline-block bg-[#76ABAE] relative bottom-10" style={{opacity:0.8}}>
+                    <h1 className="text-center font-bold text-3xl text-[#F2F2F2] ">Timeline</h1>
+                </div>
+            </div>
+            <div className="relative">
                 {/* Education tab content */}
                 <div className=" ">
-                    <h2 className="text-center font-bold text-4xl text-[#76ABAE] mb-4">Education</h2>
+                    <h2 className="text-center font-bold text-2xl text-[#76ABAE] mb-4">Education</h2>
                     <ul  className=" timeline timeline-snap-icon max-md:timeline-compact timeline-vertical m-10">
                     {info.slice().reverse().filter(item => item.forEducation).slice().reverse().map((line, index) => ( 
                             <li data-aos="fade-down" data-aos-easing="ease-in-sine" key={index} className="py-10 text-[#76ABAE]">
@@ -84,7 +85,7 @@ const Timelines = forwardRef((props, ref) => {
                             
                     {/* Experience tab content */}
                     <div className="">
-                    <h2 className="text-center font-bold text-4xl text-[#76ABAE] mb-4">Experience</h2>
+                    <h2 className="text-center font-bold text-2xl text-[#76ABAE] mb-4">Experience</h2>
                     <ul  className=" timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                     {info.slice().reverse().filter(item => !item.forEducation).slice().reverse().map((line, index) => ( 
                             <li data-aos="fade-down" data-aos-easing="ease-in-sine" key={index} className="py-10  text-[#76ABAE] text-right">

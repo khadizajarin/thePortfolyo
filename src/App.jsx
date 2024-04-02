@@ -43,18 +43,18 @@ function App() {
 
   const navlink = 
             <>
-              <li onClick={() => scrollToSection(aboutRef)}><button className="btn hover:bg-[#EEEEEE] btn-ghost">ABOUT</button></li>
-              <li onClick={() => scrollToSection(servicesRef)}><button className="btn hover:bg-[#EEEEEE] btn-ghost">SERVICES</button></li>
-              <li onClick={() => scrollToSection(skillsRef)}><button className="btn hover:bg-[#EEEEEE] btn-ghost">SKILLS</button></li>
-              <li onClick={() => scrollToSection(projectsRef)}><button className="btn hover:bg-[#EEEEEE] btn-ghost">PROJECTS</button></li>
-              <li onClick={() => scrollToSection(timelineRef)}><button className="btn hover:bg-[#EEEEEE] btn-ghost">TIMELINE</button></li>
-              <li onClick={() => scrollToSection(testimonialRef)}><button className="btn hover:bg-[#EEEEEE] btn-ghost">TESTIMONIALS</button></li>
-              <li onClick={() => scrollToSection(contactRef)}><button className="btn hover:bg-[#EEEEEE] btn-ghost">CONTACT</button></li>
+              <li onClick={() => scrollToSection(aboutRef)}><button className="btn hover:bg-[#F2F2F2] btn-ghost font-semibold">ABOUT</button></li>
+              <li onClick={() => scrollToSection(servicesRef)}><button className="btn hover:bg-[#F2F2F2] btn-ghost font-semibold">SERVICES</button></li>
+              <li onClick={() => scrollToSection(skillsRef)}><button className="btn hover:bg-[#F2F2F2] btn-ghost font-semibold">SKILLS</button></li>
+              <li onClick={() => scrollToSection(projectsRef)}><button className="btn hover:bg-[#F2F2F2] btn-ghost font-semibold">PROJECTS</button></li>
+              <li onClick={() => scrollToSection(timelineRef)}><button className="btn hover:bg-[#F2F2F2] btn-ghost font-semibold">TIMELINE</button></li>
+              <li onClick={() => scrollToSection(testimonialRef)}><button className="btn hover:bg-[#F2F2F2] btn-ghost font-semibold">TESTIMONIALS</button></li>
+              <li onClick={() => scrollToSection(contactRef)}><button className="btn hover:bg-[#F2F2F2] btn-ghost font-semibold">CONTACT</button></li>
             </>
   
 
   return (
-    <div className=" bg-[#222831]">
+    <div className=" ">
       <div className="navbar bg-[#76ABAE] font-extrabold lg:px-28">
         <div className="navbar-start">
           {/* Dropdown for mobile */}
@@ -71,7 +71,7 @@ function App() {
         </div>
         {/* Center menu for larger screens */}
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 space-x-4  text-[#222831]">
+          <ul className="menu menu-horizontal px-1 space-x-4 font text-[#222831] ">
             {navlink}
           </ul>
         </div>
@@ -82,7 +82,6 @@ function App() {
           </div>
         </div>
       </div>
-      {/* <hr className="divider my-0" /> */}
       {/* Components */}
       <Home></Home>
       <About ref={aboutRef}></About>
