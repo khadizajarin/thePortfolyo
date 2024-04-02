@@ -67,7 +67,7 @@ function App() {
             </ul>
           </div>
           {/* User name */}
-          <a className="btn btn-ghost text-xl text-[#222831]">{info.user?.about?.name}</a>
+          <a className="btn btn-ghost text-xl text-[#222831]">{info.user?.about?.name?.toUpperCase()}</a>
         </div>
         {/* Center menu for larger screens */}
         <div className="navbar-center hidden lg:flex">

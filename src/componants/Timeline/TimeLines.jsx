@@ -53,8 +53,8 @@ const Timelines = forwardRef((props, ref) => {
                     <h2 className="text-center font-bold text-4xl text-[#F2F2F2] mb-4 underline">EDUCATION</h2>
                     <ul  className=" timeline timeline-snap-icon max-md:timeline-compact timeline-vertical p-10 ">
                     {info.slice().reverse().filter(item => item.forEducation).slice().reverse().map((line, index) => ( 
-                            <li data-aos="fade-down" data-aos-easing="ease-in-sine" key={index} className="py-5 text-[#76ABAE]">
-                                <div className="timeline-start text-right">
+                            <li  data-aos-easing="ease-in-sine" key={index} className="py-5 text-[#76ABAE]">
+                                <div data-aos="fade-left" className="timeline-start text-right">
                                     <p className="text-4xl font-bold">{line.company_name}</p>
                                     <p className="font-semibold text-[#F2F2F2] mt-4 pl-56">{line.summary}</p>
                                     <ul className="custom-bullets  mt-4 pt-2">
@@ -65,7 +65,7 @@ const Timelines = forwardRef((props, ref) => {
                                         ))}
                                     </ul>
                                 </div>
-                                <div className="timeline-end font-bold">
+                                <div data-aos="fade-right" className="timeline-end font-bold">
                                     <p className="text-3xl">{formatDate(line.startDate)} - {formatDate(line.endDate)},<br />{line.jobLocation}</p>
                                     <p className="text-lg pt-2 text-[#F2F2F2]">{line.jobTitle}</p>
                                 </div>
@@ -88,8 +88,8 @@ const Timelines = forwardRef((props, ref) => {
                     <h2 className="text-center font-bold text-4xl text-[#F2F2F2] mb-4 underline">EXPERIENCE</h2>
                     <ul  className=" timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                     {info.slice().reverse().filter(item => !item.forEducation).slice().reverse().map((line, index) => ( 
-                            <li data-aos="fade-down" data-aos-easing="ease-in-sine" key={index} className="py-5  text-[#76ABAE] text-right">
-                                <div className="timeline-end text-left">
+                            <li  data-aos-easing="ease-in-sine" key={index} className="py-5  text-[#76ABAE] text-right">
+                                <div data-aos="fade-right" className="timeline-end text-left">
                                     <p className="text-4xl font-bold">{line.company_name}</p>
                                     <p className="font-semibold text-[#F2F2F2] mt-4 pr-56">{line.summary}</p>
                                     <ul className="custom-bullets mt-4 pt-2">
@@ -100,7 +100,7 @@ const Timelines = forwardRef((props, ref) => {
                                         ))}
                                     </ul>
                                 </div>
-                                <div className="timeline-start font-bold">
+                                <div data-aos="fade-left" className="timeline-start font-bold">
                                     <p className="text-3xl">{formatDate(line.startDate)} - {formatDate(line.endDate)},<br />{line.jobLocation}</p>
                                     <p className="text-lg pt-2 text-[#F2F2F2]">{line.jobTitle}</p>
                                 </div>

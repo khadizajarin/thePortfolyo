@@ -69,7 +69,7 @@ const Skills = forwardRef((props, ref) => {
                         <h1 className="text-center font-bold  text-3xl text-[##76ABAE] ">SKILLS</h1>
                     </div>
                 </div>
-                <div data-aos="flip-down" className="grid lg:grid-cols-5 grid-cols-2 gap-8 justify-center relative">
+                <div data-aos="fade-down" className="grid lg:grid-cols-5 grid-cols-2 gap-8 justify-center relative">
                     {info &&
                         info.slice().reverse().map((skill, index) => (
                             <SkillItem  key={index} skill={skill} />

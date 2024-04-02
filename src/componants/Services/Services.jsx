@@ -31,15 +31,7 @@ const Services = forwardRef((props, ref) => {
         });
     }, []);
 
-    const draw = {
-        hidden: { scaleY: [-1, 0] }, 
-        visible: {
-            scaleX: [0, 1], 
-            transition: {
-                scaleX: { type: "spring", duration: 4, repeat: Infinity, }, 
-            }
-        },   
-    };
+
 
     return (
         <div ref={ref}  className=" flex justify-center items-center " >
