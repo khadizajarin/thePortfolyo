@@ -18,7 +18,7 @@ const RightContent = () => {
     }, [axiosPublic]);
 
     return (
-        <div className="lg:pl-12">
+        <div className="lg:pl-12 bg-[#34464C]">
             <div className=" lg:p-56">
             <motion.div
             initial={{ scale: 0 }}
@@ -28,8 +28,8 @@ const RightContent = () => {
                 stiffness: 260,
                 damping: 20,
             }}
-            ><span className="font-bold text-4xl lg:text-7xl text-[#76ABAE]">{info.user?.about?.title?.substring(0, 9)} </span>
-            <span className="font-bold text-4xl  text-[#76ABAE]">{info.user?.about?.title?.substring(9)}...</span>
+            ><span className="font-bold text-4xl lg:text-7xl text-[#76ABAE] " >{info.user?.about?.title?.substring(0, 9)?.toUpperCase()} </span>
+            <span className="font-bold text-4xl  text-[#F2F2F2] mt-20" style={{ letterSpacing: '22px' }}>{info.user?.about?.title?.substring(9)?.toUpperCase()}</span>
             </motion.div>
             </div>
         </div>

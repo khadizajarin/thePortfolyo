@@ -45,7 +45,7 @@ const Services = forwardRef((props, ref) => {
         <div ref={ref}  className=" flex justify-center items-center " >
             <div className="">
                 <div className="flex justify-center relative z-10 bg-[#F2F2F2]" >
-                    <div className=" p-5 inline-block bg-[#76ABAE] relative top-10" style={{opacity:0.5}}>
+                    <div className=" p-5 inline-block bg-[#76ABAE] relative top-10" style={{opacity:0.7}}>
                         <h1 className="text-center font-bold text-3xl text-[#F2F2F2] ">WHAT I DO</h1>
                     </div>
                 </div>

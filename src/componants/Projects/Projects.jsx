@@ -29,7 +29,7 @@ const Projects = forwardRef((props, ref) => {
     }, [axiosPublic]);
     return (
         <div ref={ref} className="bg-white " >
-            <div className="flex justify-center relative z-10 " style={{opacity:0.5}}>
+            <div className="flex justify-center relative z-10 " style={{opacity:0.7}}>
                 <div className=" p-5 inline-block bg-[#76ABAE] relative top-10" >
                     <h1 className="text-center font-bold  text-3xl text-[#F2F2F2] ">PROJECTS</h1>
                 </div>

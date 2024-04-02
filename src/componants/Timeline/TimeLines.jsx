@@ -41,23 +41,23 @@ const Timelines = forwardRef((props, ref) => {
 
 
     return (
-        <div ref={ref} className=" pb-32">
+        <div ref={ref} className=" pb-32 bg-[#34464C]">
             <div className="flex justify-center relative z-10 " >
                 <div className=" p-5 inline-block bg-[#76ABAE] relative bottom-10" style={{opacity:0.8}}>
-                    <h1 className="text-center font-bold text-3xl text-[#F2F2F2] ">Timeline</h1>
+                    <h1 className="text-center font-bold text-3xl text-[#F2F2F2] ">TIMELINE</h1>
                 </div>
             </div>
             <div className="relative">
                 {/* Education tab content */}
-                <div className=" ">
-                    <h2 className="text-center font-bold text-2xl text-[#76ABAE] mb-4">Education</h2>
-                    <ul  className=" timeline timeline-snap-icon max-md:timeline-compact timeline-vertical m-10">
+                <div className=" bg-[#34464C] ">
+                    <h2 className="text-center font-bold text-4xl text-[#F2F2F2] mb-4 underline">EDUCATION</h2>
+                    <ul  className=" timeline timeline-snap-icon max-md:timeline-compact timeline-vertical p-10 ">
                     {info.slice().reverse().filter(item => item.forEducation).slice().reverse().map((line, index) => ( 
-                            <li data-aos="fade-down" data-aos-easing="ease-in-sine" key={index} className="py-10 text-[#76ABAE]">
+                            <li data-aos="fade-down" data-aos-easing="ease-in-sine" key={index} className="py-5 text-[#76ABAE]">
                                 <div className="timeline-start text-right">
-                                    <p className="text-5xl font-extrabold">{line.company_name}</p>
-                                    <p className="font-semibold">{line.summary}</p>
-                                    <ul className="custom-bullets mt-4">
+                                    <p className="text-4xl font-bold">{line.company_name}</p>
+                                    <p className="font-semibold text-[#F2F2F2] mt-4 pl-56">{line.summary}</p>
+                                    <ul className="custom-bullets  mt-4 pt-2">
                                         {line.bulletPoints.map((bullet, index) => (
                                             <li key={index}>
                                                 {bullet}
@@ -66,17 +66,17 @@ const Timelines = forwardRef((props, ref) => {
                                     </ul>
                                 </div>
                                 <div className="timeline-end font-bold">
-                                    <p className="text-5xl">{formatDate(line.startDate)} - {formatDate(line.endDate)},<br />{line.jobLocation}</p>
-                                    <p className="text-lg">{line.jobTitle}</p>
+                                    <p className="text-3xl">{formatDate(line.startDate)} - {formatDate(line.endDate)},<br />{line.jobLocation}</p>
+                                    <p className="text-lg pt-2 text-[#F2F2F2]">{line.jobTitle}</p>
                                 </div>
-                                <motion.hr
+                                <motion.div
                                     className="timeline-middle mx-10 text-[#76ABAE]"
                                     stroke="" // Adding the stroke color here
                                     strokeWidth="10"
                                     variants={draw}
                                     initial="hidden"
                                     animate="visible"
-                                />
+                                > <div className="h-72  bg-[#F2F2F2]" style={{width: "2px"}}></div></motion.div>
                             </li>
                     ))}
                      </ul>
@@ -84,15 +84,15 @@ const Timelines = forwardRef((props, ref) => {
 
                             
                     {/* Experience tab content */}
-                    <div className="">
-                    <h2 className="text-center font-bold text-2xl text-[#76ABAE] mb-4">Experience</h2>
+                    <div className="bg-[#34464C]">
+                    <h2 className="text-center font-bold text-4xl text-[#F2F2F2] mb-4 underline">EXPERIENCE</h2>
                     <ul  className=" timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                     {info.slice().reverse().filter(item => !item.forEducation).slice().reverse().map((line, index) => ( 
-                            <li data-aos="fade-down" data-aos-easing="ease-in-sine" key={index} className="py-10  text-[#76ABAE] text-right">
+                            <li data-aos="fade-down" data-aos-easing="ease-in-sine" key={index} className="py-5  text-[#76ABAE] text-right">
                                 <div className="timeline-end text-left">
-                                    <p className="text-5xl font-extrabold">{line.company_name}</p>
-                                    <p className="font-semibold">{line.summary}</p>
-                                    <ul className="custom-bullets  mt-4">
+                                    <p className="text-4xl font-bold">{line.company_name}</p>
+                                    <p className="font-semibold text-[#F2F2F2] mt-4 pr-56">{line.summary}</p>
+                                    <ul className="custom-bullets mt-4 pt-2">
                                         {line.bulletPoints.map((bullet, index) => (
                                             <li key={index}>
                                                 {bullet}
@@ -101,17 +101,17 @@ const Timelines = forwardRef((props, ref) => {
                                     </ul>
                                 </div>
                                 <div className="timeline-start font-bold">
-                                    <p className="text-5xl">{formatDate(line.startDate)} - {formatDate(line.endDate)},<br />{line.jobLocation}</p>
-                                    <p className="text-lg">{line.jobTitle}</p>
+                                    <p className="text-3xl">{formatDate(line.startDate)} - {formatDate(line.endDate)},<br />{line.jobLocation}</p>
+                                    <p className="text-lg pt-2 text-[#F2F2F2]">{line.jobTitle}</p>
                                 </div>
-                                <motion.hr
-                                    className="timeline-middle  mx-10"
-                                    stroke="#76ABAE"
-                                    strokeWidth="2"
+                                <motion.div
+                                    className="timeline-middle mx-10 text-[#76ABAE]"
+                                    stroke="" // Adding the stroke color here
+                                    strokeWidth="10"
                                     variants={draw}
                                     initial="hidden"
                                     animate="visible"
-                                />
+                                > <div className="h-72  bg-[#F2F2F2]" style={{width: "2px"}}></div></motion.div>
                             </li>
                     ))}
                      </ul>

@@ -16,6 +16,7 @@ body {
 
 .custom-bullets li {
   margin-bottom: 0.5em; /* Adjust spacing between list items */
+  font-size: small;
 }
 
 .bullet-icon {

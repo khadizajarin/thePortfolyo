@@ -40,7 +40,7 @@ const About = forwardRef((props, ref) => {
 
     return (
         <div ref={ref} className="relative bg-[#F2F2F2] " > 
-            <h1 className="text-center font-bold text-4xl lg:text-5xl text-[#222831] pt-16">ABOUT ME</h1>
+            <h1 className="text-center font-bold text-4xl underline text-[#222831] pt-16">ABOUT ME</h1>
             <div className="lg:py-16 max-w-7xl mx-auto flex justify-center items-center">
                 <div className="flex flex-col lg:flex-row items-center text-[#222831]"> 
                     <div className="w-1/2 flex justify-center relative">
